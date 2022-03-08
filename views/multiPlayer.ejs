@@ -21,37 +21,11 @@
                 <a class="nav-link" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Singleplayer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/multiplayer">Multiplayer</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
               </li>
             </ul>
           </div>
         </div>
     </nav>
-
-    <div class="container mt-4">
-      <h1 class="display-4">Quiz</h1>
-      <form action="results/<%= gameCode %>" class="mt-3">
-        <% questions.map((question, index) => { %>
-          <div class="container mb-3">
-            <p class="lead" style="margin-bottom: 0.5rem;"><strong><%= index+1 %>) </strong><%- question.question %></p>
-            <% options[index].map((option, idx) => { %>
-              <div class="form-check">
-                <input value="<%= option %> " class="form-check-input" type="radio" name="<%= index %>flexRadioDefault" id="<%= index %>flexRadioDefault<%= idx %>">
-                <label class="form-check-label" for="<%= index %>flexRadioDefault<%= idx %>">
-                  <%- option %>
-                </label>
-              </div>
-            <% }) %>
-          </div>
-        <% }) %> 
-        <button type="submit" class="btn btn-primary mb-3">See Results</button>
-      </form>
-    </div>
 </body>
 </html>

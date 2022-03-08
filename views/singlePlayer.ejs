@@ -21,12 +21,6 @@
                 <a class="nav-link" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Singleplayer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/multiplayer">Multiplayer</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
               </li>
             </ul>
@@ -49,13 +43,13 @@
             <strong>Hard Level Questions:</strong> <%= quizInfo.category_question_count.total_hard_question_count %>
         </p>
         <form action="/singleplayer/<%= quizInfo.category_id %>/quiz" method="get">
-          <select name="difficulty" class="form-select mb-3" aria-label="Default select example" style="width: 20%;">
+          <select name="difficulty" class="form-select mb-3" aria-label="Default select example">
             <option value="easy" selected>Select Difficulty</option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
-          <select name="amount" class="form-select mb-3" aria-label="Default select example" style="width: 20%;">
+          <select name="amount" class="form-select mb-3" aria-label="Default select example">
             <option value="10" selected>Select Number Of Questions</option>
             <option value="10">10</option>
             <option value="20">20</option>

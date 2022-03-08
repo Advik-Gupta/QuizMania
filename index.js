@@ -6,7 +6,8 @@ const port = process.env.PORT || 3000;
 
 // ___________________________________________________________________________________________________________________________
 
-app.set('views', 'public');
+app.set('views', 'views');
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
@@ -34,10 +35,37 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
+	const images = {
+		'General Knowledge': 'images/gk.png',
+		'Entertainment: Books': 'images/books.jpg',
+		'Entertainment: Film': 'images/movies.jpg',
+		'Entertainment: Music': 'images/music.jpg',
+		'Entertainment: Musicals & Theatres': 'images/theatres.jpg',
+		'Entertainment: Television': 'images/television.jpg',
+		'Entertainment: Video Games': 'images/videogames.jpg',
+		'Entertainment: Board Games': 'images/boardgames.jpg',
+		'Science & Nature': 'images/science.jpg',
+		'Science: Computers': 'images/computers.jpg',
+		'Science: Mathematics': 'images/maths.jpg',
+		Mythology: 'images/mythology.jpg',
+		Art: 'images/art.jpg',
+		Celebrities: 'images/celebrities.jpg',
+		Animals: 'images/animals.jpg',
+		Vehicles: 'images/vehicles.jpg',
+		'Entertainment: Comics': 'images/comics.jpg',
+		'Science: Gadgets': 'images/gadgets.jpg',
+		'Entertainment: Japanese Anime & Manga': 'images/anime.jpeg',
+		'Entertainment: Cartoon & Animations': 'images/cartoon.png',
+		Sports: 'images/sports.jpeg',
+		Geography: 'images/geography.jpg',
+		History: 'images/history.jpeg',
+		Politics: 'images/politics.jpeg'
+	};
+
 	axios
 		.get('https://opentdb.com/api_category.php')
 		.then((data) => {
-			res.render('home', { data: data.data });
+			res.render('home', { data: data.data, images: images });
 		})
 		.catch((error) => {
 			console.log(error);
