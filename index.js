@@ -162,14 +162,6 @@ app.get('/singleplayer/:id/results/:gameCode', (req, res) => {
 	});
 });
 
-app.get('/multiplayer', (req, res) => {
-	res.render('multiPlayer');
-});
-
-app.get('/about', (req, res) => {
-	res.render('about');
-});
-
 // ___________________________________________________________________________________________________________________________
 
 app.listen(port, () => {
