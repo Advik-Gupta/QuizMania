@@ -1,5 +1,5 @@
 # QuizMania
 Deployed site - https://adviksquizmania.herokuapp.com/home
 
-A trivia game site I built with singleplayer and multiplayer.
+A trivia game site I built.
 
